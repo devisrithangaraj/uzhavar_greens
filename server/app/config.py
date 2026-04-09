@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
-ENV_FILES = [ROOT_DIR / ".env", ROOT_DIR / "backend" / ".env"]
+ENV_FILES = [ROOT_DIR / "server" / ".env", ROOT_DIR / ".env"]
 DEFAULT_CORS_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
