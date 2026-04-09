@@ -1,0 +1,139 @@
+.pageContainer {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gray-50);
+  padding: 3rem 1rem;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 28rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-gray-100);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.iconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: var(--color-accent-100);
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  color: var(--color-accent-600);
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.subtitle {
+  color: var(--color-gray-500);
+  margin-top: 0.5rem;
+}
+
+.errorBox {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--color-red-50);
+  color: var(--color-red-600);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-300);
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+}
+
+.submitBtn {
+  width: 100%;
+  background-color: var(--color-accent-600);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-lavender-600);
+  box-shadow: 0 0 15px 5px rgba(168, 85, 247, 0.5);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.footerText {
+  color: var(--color-gray-600);
+}
+
+.link {
+  color: var(--color-accent-600);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--color-accent-800);
+}
+
+.demoBox {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-gray-100);
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

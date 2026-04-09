@@ -1,0 +1,254 @@
+.pageContainer {
+  width: 100%;
+  background-color: white;
+}
+
+.aboutSection {
+  padding: 5rem 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .aboutGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.aboutTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .aboutTitle { font-size: 3rem; }
+}
+
+.aboutText {
+  font-size: 1.125rem;
+  color: var(--color-gray-600);
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--color-accent-600);
+  font-weight: 600;
+}
+
+.featureBox {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.featureIcon {
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--color-accent-100);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.featureIconText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-700);
+}
+
+.featureTitle {
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.featureSubtitle {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+.imageContainer {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  height: 100%;
+}
+
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contactSection {
+  padding: 5rem 1rem;
+  background-color: var(--color-primary-50);
+}
+
+.contactContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contactTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contactTitle { font-size: 2.25rem; }
+}
+
+.contactSubtitle {
+  color: var(--color-gray-600);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contactCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-primary-50);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .contactCard { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+}
+
+.contactInfo {
+  background-color: var(--color-primary-800);
+  color: var(--color-primary-50);
+  padding: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .contactInfo { grid-column: span 1 / span 1; }
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 1rem;
+}
+
+.infoIcon {
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+.formContainer {
+  padding: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .formContainer { grid-column: span 2 / span 2; }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-300);
+  outline: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: var(--color-accent-500);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+}
+
+.textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: white;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+  .submitBtn { width: auto; }
+}
+
+.submitBtnDefault {
+  background-color: var(--color-accent-600);
+}
+
+.submitBtnDefault:hover {
+  background-color: var(--color-lavender-600);
+  box-shadow: 0 0 15px 5px rgba(168, 85, 247, 0.5);
+}
+
+.submitBtnSuccess {
+  background-color: #22c55e;
+}
