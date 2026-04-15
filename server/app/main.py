@@ -4,7 +4,9 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import get_cors_origins
 from .routes import admin, ai, auth, users
-
+from app.database import SessionLocal
+from app.models import User
+from app.routes.admin import pwd_context
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -18,6 +20,25 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+
+@app.on_event("startup")
+def create_default_admin():
+    db = SessionLocal()
+
+    admin = db.query(User).filter(User.email == "admin@gmail.com").first()
+
+    if not admin:
+        new_admin = User(
+            email="admin@gmail.com",
+            hashed_password=pwd_context.hash("Admin@123"),
+            role="admin"
+        )
+        db.add(new_admin)
+        db.commit()
+
+    db.close()
 
 app.include_router(auth.router)
 app.include_router(admin.router)
