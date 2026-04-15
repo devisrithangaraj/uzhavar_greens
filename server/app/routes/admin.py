@@ -74,25 +74,7 @@ def get_current_admin(
 
 
 
-@app.on_event("startup")
-def create_default_admin():
-    db = SessionLocal()
 
-    admin = db.query(User).filter(User.email == "admin@gmail.com").first()
-
-    if not admin:
-        hashed = pwd_context.hash("Admin@123")
-
-        new_admin = User(
-            email="admin@gmail.com",
-            hashed_password=hashed,
-            role="admin"
-        )
-
-        db.add(new_admin)
-        db.commit()
-
-    db.close()
 
 
 
