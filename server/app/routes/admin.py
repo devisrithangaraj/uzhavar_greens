@@ -73,7 +73,23 @@ def get_current_admin(
         raise HTTPException(status_code=401, detail="Invalid token")
 
 
-    
+
+@router.post("/create-admin")
+def create_admin(db: Session = Depends(get_db)):
+    hashed_password = pwd_context.hash("Admin1234@")
+
+    admin = User(
+        email="admin@gmail.com",
+        hashed_password=hashed_password,
+        role="admin"
+    )
+
+    db.add(admin)
+    db.commit()
+    return {"message": "Admin created"}
+
+
+
 
 @router.post("/login")
 def admin_login(
