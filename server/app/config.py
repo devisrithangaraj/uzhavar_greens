@@ -36,10 +36,11 @@ def get_required_env(name: str) -> str:
     raise RuntimeError(f"Missing required environment variable: {name}")
 
 
-def get_cors_origins() -> list[str]:
-    raw_value = os.getenv("CORS_ORIGINS", "")
-    origins = [origin.strip() for origin in raw_value.split(",") if origin.strip()]
-    return origins or DEFAULT_CORS_ORIGINS
+def get_cors_origins():
+    return [
+        "https://uzhavar-greens.netlify.app",
+        "http://localhost:5173"
+    ]
 
 
 DATABASE_URL = os.getenv("DATABASE_URL") or os.getenv("DB_URL")
