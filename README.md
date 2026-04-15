@@ -1,3 +1,8 @@
+#live demo link
+
+https://uzhavar-greens.netlify.app
+https://uzhavar-greens-0bvx.onrender.com
+
 # Uzhavar Greens
 
 A full-stack marketplace application split into a React frontend and a FastAPI backend.
