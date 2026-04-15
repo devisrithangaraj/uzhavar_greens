@@ -30,16 +30,18 @@ def create_default_admin():
     admin = db.query(User).filter(User.email == "admin@gmail.com").first()
 
     if not admin:
-    new_admin = User(
-        name="Admin",              # ✅ ADD THIS
-        email="admin@gmail.com",
-        phone="0000000000",       # ✅ OR valid dummy value
-        hashed_password=pwd_context.hash("Admin@123"),
-        role="admin"
-    )
+        new_admin = User(
+            name="Admin",
+            email="admin@gmail.com",
+            phone="0000000000",
+            hashed_password=pwd_context.hash("Admin@123"),
+            role="admin"
+        )
 
-    db.add(new_admin)
-    db.commit()
+        db.add(new_admin)
+        db.commit()
+
+    db.close()
 
 app.include_router(auth.router)
 app.include_router(admin.router)
