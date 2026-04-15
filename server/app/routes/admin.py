@@ -74,19 +74,25 @@ def get_current_admin(
 
 
 
-@router.post("/create-admin")
-def create_admin(db: Session = Depends(get_db)):
-    hashed_password = pwd_context.hash("Admin1234@")
+@app.on_event("startup")
+def create_default_admin():
+    db = SessionLocal()
 
-    admin = User(
-        email="admin@gmail.com",
-        hashed_password=hashed_password,
-        role="admin"
-    )
+    admin = db.query(User).filter(User.email == "admin@gmail.com").first()
 
-    db.add(admin)
-    db.commit()
-    return {"message": "Admin created"}
+    if not admin:
+        hashed = pwd_context.hash("Admin@123")
+
+        new_admin = User(
+            email="admin@gmail.com",
+            hashed_password=hashed,
+            role="admin"
+        )
+
+        db.add(new_admin)
+        db.commit()
+
+    db.close()
 
 
 
